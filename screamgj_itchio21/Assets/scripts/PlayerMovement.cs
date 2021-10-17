@@ -4,23 +4,58 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    // Movement and Crouch
+    CharacterController characterCollider;
     public CharacterController controller;
+    public float speed = 12f;
 
-    public float velocity = 12f;
+    // Gravity
+    public float gravity = -9.81f;
+    public float groundDistance = 0.4f;
+    public Transform groundCheck;
+    public  LayerMask groundMask;
+    public float cTime = 0.9f;
+    Vector3 velocity;
+    bool isGrounded;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        characterCollider = gameObject.GetComponent<CharacterController> ();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Gravity
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+        if(isGrounded && velocity.y < 0) {
+            velocity.y = -2f;
+        }
+
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
+
+        // Movement
         float xMove = Input.GetAxis("Horizontal");
         float zMove = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * xMove + transform.forward * zMove;
-        controller.Move(move * velocity);
+        controller.Move(move * speed);
+
+        // Crouch
+        if(Input.GetKey(KeyCode.LeftControl)){
+            characterCollider.height = 1.0f;
+        }
+        else{
+            if(characterCollider.height < 1.75f){
+                characterCollider.height += cTime * Time.deltaTime;
+            }
+            else{
+                characterCollider.height = 1.75f;
+            }  
+        }
+        
     }
 }
