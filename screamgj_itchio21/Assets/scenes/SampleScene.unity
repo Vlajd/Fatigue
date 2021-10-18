@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 47675056}
   - component: {fileID: 47675055}
   - component: {fileID: 47675058}
+  - component: {fileID: 47675057}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -172,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 47675056}
-  speed: 0.08
+  speed: 0.075
   gravity: -9.81
   groundDistance: 0.4
   groundCheck: {fileID: 2027721842}
@@ -198,6 +199,18 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &47675057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47675053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8595033c1fc44b49b503bcf36dda0e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &47675058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +228,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   excludeLayerName: 
-  openDoorKey: 101
+  interactKey: 101
   crosshair: {fileID: 1126430910}
 --- !u!1 &205963048
 GameObject:
@@ -1023,9 +1036,10 @@ GameObject:
   - component: {fileID: 1104178550}
   - component: {fileID: 1104178549}
   - component: {fileID: 1104178548}
-  m_Layer: 3
+  - component: {fileID: 1104178552}
+  m_Layer: 6
   m_Name: TestItem
-  m_TagString: Untagged
+  m_TagString: InteractiveItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1106,6 +1120,18 @@ Transform:
   m_Father: {fileID: 1213037587}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1104178552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104178547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702366f32cf9c8f43ab5bc84305659d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1126430908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,7 +1560,7 @@ GameObject:
   - component: {fileID: 1996509029}
   m_Layer: 6
   m_Name: DoorEmpty
-  m_TagString: InteractiveObject
+  m_TagString: InteractiveDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DoorRaycast : MonoBehaviour
+public class OnTriggerRaycast : MonoBehaviour
 {
     [SerializeField] private int rayLength = 5;
     [SerializeField] private LayerMask layerMaskInteract;
     [SerializeField] private string excludeLayerName = null;
-    private DoorController raycastedObj;
-    [SerializeField] private KeyCode openDoorKey = KeyCode.E;
+    private OnTriggerAnimationController doorAnim;
+    private OnTriggerItemCollect itemCall;
+    [SerializeField] private KeyCode interactKey = KeyCode.E;
     [SerializeField] private Text crosshair = null;
     private bool isCrosshairActive;
     private bool doOnce;
-    private const string interactableTag = "InteractiveObject";
+    private const string interactableDoorTag = "InteractiveDoor";
+    private const string interactableItemTag = "InteractiveItem";
+
 
     private void Update () {
         RaycastHit hit;
@@ -22,17 +25,35 @@ public class DoorRaycast : MonoBehaviour
         int mask = 1 << LayerMask.NameToLayer(excludeLayerName) | layerMaskInteract.value;
 
         if (Physics.Raycast(transform.position, fwd, out hit, rayLength, mask)) {
-            if (hit.collider.CompareTag(interactableTag)) {
+
+            if (hit.collider.CompareTag(interactableDoorTag)) {
+
+                //doors
                 if (!doOnce) {
-                    raycastedObj = hit.collider.gameObject.GetComponent<DoorController>();
+                    doorAnim = hit.collider.gameObject.GetComponent<OnTriggerAnimationController>();
                     CrosshairChange(true);
                 }
 
                 isCrosshairActive = true;
                 doOnce = true;
 
-                if (Input.GetKeyDown(openDoorKey)) {
-                    raycastedObj.PlayAnimation();
+                if (Input.GetKeyDown(interactKey)) {
+                    doorAnim.PlayAnimation();
+                }
+            }
+
+            //items
+            if (hit.collider.CompareTag(interactableItemTag)) {
+                if (!doOnce) {
+                    itemCall = hit.collider.gameObject.GetComponent<OnTriggerItemCollect>();
+                    CrosshairChange(true);
+                }
+
+                isCrosshairActive = true;
+                doOnce = true;
+
+                if (Input.GetKeyDown(interactKey)) {
+                    itemCall.itemCollect();
                 }
             }
         }
