@@ -196,4 +196,11 @@ AnimationClip:
     script: {fileID: 0}
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 1
+    functionName: aniBoolean
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: fef8c403dd9e7514b855a7430ec51ee2, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

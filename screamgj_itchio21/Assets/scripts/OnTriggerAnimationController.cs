@@ -4,23 +4,31 @@ using UnityEngine;
 
 public class OnTriggerAnimationController : MonoBehaviour
 {
+    private bool deAniBool = true;
     private Animator doorAnim;
     private bool doorOpen = false;
 
-    private void Awake() {
+    private void Awake () {
         doorAnim = gameObject.GetComponent<Animator>();
     }
-
+    public void aniBoolean () {
+        deAniBool = true;
+        Debug.Log("Animating Door Done");
+    }
     public void PlayAnimation() {
-        if (!doorOpen) {
+        if (!doorOpen && deAniBool) {
             doorAnim.Play("DoorOpen", 0, 0f);
             Debug.Log("Opening " + gameObject);
             doorOpen = true;
+            deAniBool = false;
         }
         else {
-            doorAnim.Play("DoorClose", 0, 0f);
-            Debug.Log("Closing " + gameObject);
-            doorOpen = false;
+            if (deAniBool) {
+                doorAnim.Play("DoorClose", 0, 0f);
+                Debug.Log("Closing " + gameObject);
+                doorOpen = false;
+                deAniBool = false;
+            }
         }
     }
 }
