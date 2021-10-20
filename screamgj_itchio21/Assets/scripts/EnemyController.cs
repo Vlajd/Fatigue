@@ -15,6 +15,8 @@ public class EnemyController : MonoBehaviour
     private bool isSearchingLastPlayerPos;
     Vector3 lastPlayerPos;
     public GameObject playerFadeAnimation;
+    public GameObject enemySFXFadeAnimationNear;
+    public GameObject enemySFXFadeAnimationAway;
 
     void Start () {
         playerTarget = PlayerManager.instance.player.transform;
@@ -65,6 +67,8 @@ public class EnemyController : MonoBehaviour
     void OnTriggerEnter (Collider other) {
         if (other.CompareTag("Player")) {
             playerFadeAnimation.GetComponent<PlayerFadeAnimationController>().fade();
+            enemySFXFadeAnimationNear.GetComponent<EnemyFadeAnimationController>().enemyFade();
+            enemySFXFadeAnimationAway.GetComponent<EnemyFadeAnimationController>().enemyFade();
         }
     }
 
