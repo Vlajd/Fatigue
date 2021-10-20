@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     private float waypointDist;
     private bool isSearchingLastPlayerPos;
     Vector3 lastPlayerPos;
+    public GameObject playerFadeAnimation;
 
     void Start () {
         playerTarget = PlayerManager.instance.player.transform;
@@ -63,7 +64,7 @@ public class EnemyController : MonoBehaviour
 
     void OnTriggerEnter (Collider other) {
         if (other.CompareTag("Player")) {
-            Destroy (GameObject.FindWithTag("Player"));
+            playerFadeAnimation.GetComponent<PlayerFadeAnimationController>().fade();
         }
     }
 
