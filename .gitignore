@@ -43,7 +43,6 @@ ExportedObj/
 *.opendb
 *.VC.db
 *.blend1
-*.meta
 *.psd
 
 # Unity3D generated meta files

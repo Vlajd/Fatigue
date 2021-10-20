@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnTriggerAnimationController : MonoBehaviour
+public class OnTriggerDoorAnimationController : MonoBehaviour
 {
     private bool deAniBool = true;
     private Animator doorAnim;
