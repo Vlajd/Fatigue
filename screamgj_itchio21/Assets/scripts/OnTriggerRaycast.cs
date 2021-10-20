@@ -8,7 +8,7 @@ public class OnTriggerRaycast : MonoBehaviour
     [SerializeField] private int rayLength = 5;
     [SerializeField] private LayerMask layerMaskInteract;
     [SerializeField] private string excludeLayerName = null;
-    private OnTriggerAnimationController doorAnim;
+    private OnTriggerDoorAnimationController doorAnim;
     private OnTriggerItemCollect itemCall;
     [SerializeField] private KeyCode interactKey = KeyCode.E;
     [SerializeField] private Text crosshair = null;
@@ -30,7 +30,7 @@ public class OnTriggerRaycast : MonoBehaviour
 
                 //doors
                 if (!doOnce) {
-                    doorAnim = hit.collider.gameObject.GetComponent<OnTriggerAnimationController>();
+                    doorAnim = hit.collider.gameObject.GetComponent<OnTriggerDoorAnimationController>();
                     CrosshairChange(true);
                 }
 
