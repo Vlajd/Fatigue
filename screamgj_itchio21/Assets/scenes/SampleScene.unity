@@ -844,7 +844,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.1
-  MaxDistance: 12
+  MaxDistance: 10.5
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -940,7 +940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64797c13b5ce3c24c9ad2e10e92040ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: SampleScene
+  sceneName: 
 --- !u!1 &307095240
 GameObject:
   m_ObjectHideFlags: 1
@@ -1186,7 +1186,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.1
-  MaxDistance: 30
+  MaxDistance: 15
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -1273,7 +1273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64797c13b5ce3c24c9ad2e10e92040ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: SampleScene
+  sceneName: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
