@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7243882114902516137}
+  - component: {fileID: 7430909645376970481}
   m_Layer: 0
   m_Name: chair
   m_TagString: Untagged
@@ -31,6 +32,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7430909645376970481
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055990630538656531}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0562134, y: 3.7876892, z: 1.9380798}
+  m_Center: {x: -0.020381927, y: 1.3938446, z: -0.036705017}
 --- !u!1 &9042475968557865784
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +105,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a82e50bf800514d88874ea505fd791e6, type: 2}
+  - {fileID: 2100000, guid: 2b08dda46a53b76418fba8c2d59daa83, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
