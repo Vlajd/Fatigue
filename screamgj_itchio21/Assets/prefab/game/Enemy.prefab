@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 3799148657535023502}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: playerDeath
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -503,6 +503,7 @@ MonoBehaviour:
   playerFadeAnimation: {fileID: 0}
   enemySFXFadeAnimationNear: {fileID: 3799148656499050760}
   enemySFXFadeAnimationAway: {fileID: 3799148657186652607}
+  playerDeath: {fileID: 0}
 --- !u!1 &3799148657614987510
 GameObject:
   m_ObjectHideFlags: 0
