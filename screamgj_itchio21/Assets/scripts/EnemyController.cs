@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
     public GameObject playerFadeAnimation;
     public GameObject enemySFXFadeAnimationNear;
     public GameObject enemySFXFadeAnimationAway;
+    public GameObject playerDeath;
 
     void Start () {
         playerTarget = PlayerManager.instance.player.transform;
@@ -69,6 +70,7 @@ public class EnemyController : MonoBehaviour
             playerFadeAnimation.GetComponent<PlayerFadeAnimationController>().fade();
             enemySFXFadeAnimationNear.GetComponent<EnemyFadeAnimationController>().enemyFade();
             enemySFXFadeAnimationAway.GetComponent<EnemyFadeAnimationController>().enemyFade();
+            playerDeath.GetComponent<PlayerDeath>().playerDeath();
         }
     }
 
