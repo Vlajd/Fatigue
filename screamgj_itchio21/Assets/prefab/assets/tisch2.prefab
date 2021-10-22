@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 207199566038815884}
   - component: {fileID: 2667513760117891142}
   - component: {fileID: 5344019031679403480}
+  - component: {fileID: 756994007728983231}
   m_Layer: 0
   m_Name: tisch2
   m_TagString: Untagged
@@ -1026,3 +1027,16 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!65 &756994007728983231
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4468720720064840083}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0641147, y: 1.9999996, z: 0.8316163}
+  m_Center: {x: 0.46794266, y: 0, z: 0.5841917}
